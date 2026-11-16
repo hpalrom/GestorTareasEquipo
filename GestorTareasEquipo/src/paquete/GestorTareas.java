@@ -13,5 +13,13 @@ public class GestorTareas {
 		 if (descripcion != null && !descripcion.isBlank()) {
 		 tareas.add(descripcion);
 		 }
+	public static void listarTareas() {
+		if (tareas.isEmpty()) {
+		System.out.println("No hay tareas registradas");
+		return;
+		}
+		for (int i = 0; i < tareas.size(); i++) {
+		System.out.println((i + 1) + ". " + tareas.get(i));
+		}
 	}
 }
