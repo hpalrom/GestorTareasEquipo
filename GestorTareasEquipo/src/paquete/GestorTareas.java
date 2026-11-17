@@ -1,6 +1,7 @@
 package paquete;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class GestorTareas {
 	
@@ -12,7 +13,7 @@ public class GestorTareas {
 	agregarTarea("Hacer deporte");
 	listarTareas();
 	buscarTarea("Hacer la compra");
-	
+	eliminarTareas();
 	}
 	public static void agregarTarea(String descripcion) {
 		 if (descripcion != null && !descripcion.isBlank()) {
@@ -30,6 +31,32 @@ public class GestorTareas {
 		return tareas;
 	
 	}
+	public static void eliminarTareas() {
+		
+		String[] tareas = {"tarea1","tarea2","tarea3","tarea4","tarea5"};
+		int cont = 0;
+		String tarea="";
+		Scanner leer = new Scanner(System.in);
+		System.out.println("Introduce la tarea a buscar");
+		tarea = leer.next();
+				
+		
+		for (int i = 0; i < tareas.length; i++) {
+			if (tarea.equalsIgnoreCase(tareas[i])) {
+				cont += 1;
+				
+			}
+		}//finfor
+		
+		if (cont==0) {
+			System.out.println("No aparece en el array.");
+		} else {
+			System.out.println("Tarea eliminada.");
+			tareas[cont]="";
+		}
+		
+	}
+}
 	
 	public static ArrayList<String> buscarTarea(String descripcion) {
 	    for (int i = 0; i < tareas.size(); i++) {
