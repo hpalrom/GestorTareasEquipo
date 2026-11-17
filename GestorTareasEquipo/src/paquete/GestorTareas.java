@@ -7,12 +7,12 @@ public class GestorTareas {
 	static ArrayList<String> tareas = new ArrayList<>();
 	
 	public static void main(String[] args) {
-		System.out.println("Gestor de tareas - versión B");
-	}
+  System.out.println("Gestor de tareas - equipo A y B");
 	public static void agregarTarea(String descripcion) {
 		 if (descripcion != null && !descripcion.isBlank()) {
 		 tareas.add(descripcion);}
 		 }
+	}
 	public static void listarTareas() {
 		if (tareas.isEmpty()) {
 		System.out.println("No hay tareas registradas");
